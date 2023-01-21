@@ -1,7 +1,7 @@
 # 3-Diamond-Casino
 The Excel Casino Game made on Mac (both are'nt made to make games)
 
-Welcome to the 3 Diamond Casino, the Mego Casino located at Applications://Microsoft Excel, just 2 exits down from Applications://VLC on I-95! The casino has multiple games and can ~~ lose ~~ win lots of money. All games are made within excel and use no outside programs. There are currently 4 games that can be played and those are Blackjack, Poker, Slots, and a Simulated Stock Market. And yes, the Bots in Poker are smart. A bit too smart. All is explained in detail down below. 
+Welcome to the 3 Diamond Casino, the Mego Casino located at Applications://Microsoft Excel, just 2 exits down from Applications://VLC on I-95! The casino has multiple games and can ~~lose~~ win lots of money. All games are made within excel and use no outside programs. There are currently 4 games that can be played and those are Blackjack, Poker, Slots, and a Simulated Stock Market. And yes, the Bots in Poker are smart. A bit too smart. All is explained in detail down below. 
 
 I did this project to try and see what Excel can do, how powerful is it? Can it be used to create games? Well, I guess I proved myself correct, right? Kinda. VBA sucks and I can't wait to be done with it. Excel isn't made to do these things, and I had a lot of setbacks when using it. Not only does it have a weak language, but it's also very slow. I own a relatively new Mac and there are a lot of times were Excel would freeze up on me and refuse to work. I've put a lot of time into this project and learned a lot, hopefully, my wasted hours trying to figure out why a certain VBA function doesn't work just to find out no one mentioned that it's not built into the Mac Excel library can give you some entertainment.
 
