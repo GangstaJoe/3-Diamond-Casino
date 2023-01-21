@@ -23,8 +23,22 @@ To play a card game, we need a deck of cards. Not just any deck, but a random de
 
 The game istself is straightfoward, `DealCardsBlackJack()` shows you your cards and one of the dealer's. Within the blackJackGame() sub (the one that calls `DealCardsBlackJack()`), the value of the dealer's other card is saved for later. Promts are then given to the player and depending on their awnser, Excel responds. If player is still in the game, then `dealerAction()` is called. The dealer hits until 17. Payout is calculated and money is only lost when you loose, there is no buy in.
 
-## Poker
-
 ## Slots
+The slots game is big, and we needed a new and original concept. So thats what we did. We named the Slot Machine "Deviius Diamonds". Revolutinary stuff I know. The game is sure to attract fans all over the Excel sphere.
 
+The game is pretty simple, the simpilest of them all. I first has an array filled with symbols and an ID attached to each. There are 36 symbols in total but symbols like cherries show up 8 times while the Diamond symbol only shows up once. In our dynamic array we have each cell use a `RANDBETWEEN(1,36)` as the lookup value for our `XLOOKUP()` so we can get a random value and then display witch symbol it corrisponds to. We do the same thing in Blackjack, were we get the value of the dynamic array and set the static array equal to it.
+<Finsih>
+  
 ## Stocks
+If your more of a investment kinda guy, here you go. The Blue Market offers you a chance to invest in 15 diffrent stocks, making large money. From a man who has made 500,000 out of a 1,000 the goal is go all in on `TYU`, its the best stock out there (i only own 150,000 shares and bought it all $3.43). The best part is the data anaylsis (you know, the thing excel is made to do)! Of corse, not much is there yet but there will be in update `Alpha v5`.
+  
+The stock market is also pretty simple with the biggest problem being the lag. Evreytime `stockRun` runs, it freezes up the entire workbook for a solid second or two. For each stock, there are 4 important values: `Stock Value`, `Trend`, `Trend Length`, and `Noise`.
+  
+`Trend` is calculated by using `NORM.INV(RAND(),0,5)` to get a random value on a curve. This number is recalculated once the `Trend Length` is equal to 0. 
+
+The `Trend Length` is also a `NORM.INV` value but `ROUND()`ed and `ABS()`ed. The `Trend Length` is updated once it hits zero. 
+
+`Noise` is same as Trend just smaller, this is recalculated evrey time interval. 
+
+ Each time interval, the `Trend` and `Noise` is added to the `Stock Value` and the `Trend Length` goes down by one. All of these values are unique to each stock and the new `Stock Value` is added to the respective data table. The graphs are connected to each of the data tables and might take time to update. Each stock has a buy and sell button. The Blue Highlighted cell tells you how much of that stock you have. Evreytime you buy and sell, the recipt table table will update with info with the date, witch Stock was affected, did you buy or sell, amount bought/sold, Value of the stock at the time, and the money changed (this will be negetive for buying and positive for selling). Sadly this is my favriote part of the entire project. It even looks like a recipt :)
+## Poker
