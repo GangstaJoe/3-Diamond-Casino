@@ -1,7 +1,7 @@
 # 3-Diamond-Casino
 The Excel Casino Game made on Mac (both aren't made to make games)
 
-Welcome to the 3 Diamond Casino, the Mego Casino located at Applications://Microsoft Excel, just 2 exits down from Applications://VLC on I-95! The casino has multiple games and can ~~lose~~ win lots of money. All games are made within excel and use no outside programs. There are currently 4 games that can be played and those are Blackjack, Poker, Slots, and a Simulated Stock Market. And yes, the Bots in Poker are smart. A bit too smart. All is explained in detail down below. 
+Welcome to the Triple Diamond Casino, the Mego Casino located at Applications://Microsoft Excel, just 2 exits down from Applications://VLC on I-95! The casino has multiple games and can ~~lose~~ win lots of money. All games are made within excel and use no outside programs. There are currently 4 games that can be played and those are Blackjack, Poker, Slots, and a Simulated Stock Market. And yes, the Bots in Poker are smart. A bit too smart. All is explained in detail down below. 
 
 I did this project to try and see what Excel can do, how powerful is it? Can it be used to create games? Well, I guess I proved myself correct, right? Kinda. VBA sucks and I can't wait to be done with it. Excel isn't made to do these things, and I had a lot of setbacks when using it. Not only does it have a weak language, but it's also very slow. I own a relatively new Mac and there are a lot of times were Excel would freeze up on me and refuse to work. I've put a lot of time into this project and learned a lot, hopefully, my wasted hours trying to figure out why a certain VBA function doesn't work just to find out no one mentioned that it's not built into the Mac Excel library can give you some entertainment.
 
@@ -31,15 +31,17 @@ What I really hated was-"
 
 The game is pretty simple, the simplest of them all. I first have an array filled with symbols and an ID attached to each. There are 36 symbols in total with a varying amount of each symbol throughout. In our dynamic array, each cell uses a `RANDBETWEEN(1,36)` as the lookup value for our `XLOOKUP()` so we can get a random value and then display which symbol it corresponds to. We do the same thing in Blackjack, where we get the value of the volatile array and set the static array equal to it.
 
-Now look, I know very little about probabilities ok. I want to. I would love to, but I dont. The calculation for payouts is wrong ok. I've spent a lot of time talking to chatGPT, talking to smarter people, and doing trial and error. I didn't know I could take PropStat and not Calc, but here I am contemplating taking a class just so I can correctly do payouts in a slot game. *Currently* this is how payouts are calculated. The winning cases are getting 3,4, or 5 of a single symbol in any row (it's a 4x5 grid). The chances of each winning case are calculated:
+I would like to thank a good samaritan who replied to my "Help needed in Excel" poster I posted in all of the boy's bathrooms, they sent me a box filled with in depth explanation of how to calculate percentages and wins all on laminated index cards. Next time, please dont drop it out of a Grumman F6F, I only had one dog. This is how payouts are calculated. The winning cases are getting 3,4, or 5 of a single symbol in any row (it's a 4x5 grid). The chances of each winning case are calculated:
 
-wP = sP^aM * (aM Choose 5) *4
+`wP` = (`sP`^`aM`) * (`aM` Choose 5) *4
 
-sp = Symbol Percentage of being picked from the list
+`sP` = Symbol Percentage of being picked from the list
 
-am = Amount of Times the Symbol showed up (3+)
+`aM` = Amount of Times the Symbol showed up (3+)
 
-We then take the bet amount * 0.98 and divide it all by wP.
+Now for the payouts. Let's go step by step here. We must find the chance that there will be **no** winnings. To do this, we subtract 100 from the sum of the (`wP`/4) for all symbols. In this case, we get ~`50%`, but there are 4 rows (`wP`/4 only takes into account one row) so we need to raise it to the 4th power and we get ~`6.25%` of getting no winnings at all. This means there is a ~`93.75%` of getting a win. If we were to bet $1, we would have to split it up against all of the odds, we would get 1.066 per percent. So for each spin, we have to get `wP` and divide it by 1.066, and then we would multiply by the spin amount. The thing is though, the `wP` all add up to`224%`, not `100%`, so have to divide it by `22.4` to make things fair.
+
+This is great and all, but it's not fun. I'm not actually a big corporation that wants you to spend all of your money at my casino, I want you to want to have fun playing my game. So with some playtesting, I decided that common wins (everything over 1%) should give you a net 0 ROI. This was done with some tweaking, but multiplying all of the payouts by 2 gave me what I wanted. This means that your tenancy has a 2:1 winning chance, but it will take a while. In the meantime, you will get a net Zero win. It's like a staircase, but with money and Diamonds. Here is the final formula for the payouts `(((1.066/wP) * bet)/22.4)*2` 
 
 
 ## Stocks:
