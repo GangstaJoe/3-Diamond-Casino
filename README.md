@@ -1,7 +1,7 @@
 # 3-Diamond-Casino
 The Excel Casino Game made on Mac (both aren't made to make games)
 
-Welcome to the Triple Diamond Casino, the Mego Casino located at `Applications://Microsoft Excel`, just 2 exits down from `Applications://VLC` on the I-95!
+Welcome to the Triple Diamond Casino, the Mega Casino located at `Applications://Microsoft Excel`, just 2 exits down from `Applications://VLC` on the I-95!
 The casino has multiple games were can ~~lose~~ win lots of money. 
 All games are made within excel and use no outside programs. There are currently 4 games that can be played and those are Blackjack, Poker, Slots, and a Simulated Stock Market. And yes, the Bots in Poker are smart. A bit too smart. All is explained in detail down below. 
 
