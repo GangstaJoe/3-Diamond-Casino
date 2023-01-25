@@ -11,8 +11,6 @@ I did this project to try and see what Excel can do, how powerful is it? Can it 
 ## Known Bugs:
 * `Poker Bots` will not go durring raise check
 * `Poker Bots` will raise when folded
-* `Stocks` are able to be bought at $0
-* `Stocks` are able to sold even with no shares
 * `Blackjack` Blackjack's dont pay out accordly
 * `Home_Page` transfer sometimes calls an error
 
