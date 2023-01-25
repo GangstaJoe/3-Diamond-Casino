@@ -8,6 +8,13 @@ All games are made within excel and use no outside programs. There are currently
 I did this project to try and see what Excel can do, how powerful is it? Can it be used to create games? Well, I guess I proved myself correct, right? Kinda. VBA sucks and I can't wait to be done with it. Excel isn't made to do these things, and I had a lot of setbacks when using it. Not only does it have a weak language, but it's also very slow. I own a relatively new Mac and there are a lot of times were Excel would freeze up on me and refuse to work. I've put a lot of time into this project and learned a lot, hopefully, my wasted hours trying to figure out why a certain VBA function doesn't work just to find out no one mentioned that it's not built into the Mac Excel library can give you some entertainment.
 
 
+## Known Bugs:
+* `Poker Bots` will not go durring raise check
+* `Poker Bots` will raise when folded
+* `Stocks` are able to be bought at $0
+* `Stocks` are able to sold even with no shares
+* `Blackjack` Blackjack's dont pay out accordly
+* `Home_Page` transfer sometimes calls an error
 
 ## Transfer Market:
 Also known as the Home Page, this is the place to transfer money from different games. Winning in games will update the Transfer Market and moving money in the Market will update the values on the Games sheet. The vault is a place just to store cash so you have some on hand. There is no loss in money when transferring between games so feel free to trade at will :)
