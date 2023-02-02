@@ -9,8 +9,6 @@ I did this project to try and see what Excel can do, how powerful is it? Can it 
 
 
 ## Known Bugs:
-* `Poker Bots` will not go durring raise check
-* `Poker Bots` will raise when folded
 * `Blackjack` Blackjack's dont pay out accordly
 * `Home_Page` transfer sometimes calls an error
 
